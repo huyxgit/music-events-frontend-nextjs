@@ -8,6 +8,10 @@ import { API_URL } from '@/config/index'
 import styles from '@/styles/Dashboard.module.css'
 
 export default function DashboardPage({ events }) {
+    const deleteEvent = (id) => {
+        
+    }
+    
     return (
         <Layout title='User Dashboard'>
             <div className={styles.dash}>
@@ -15,7 +19,7 @@ export default function DashboardPage({ events }) {
                 <h3>My events</h3>
 
                 {events.map((event) => (
-                    <DashboardEvent key={event.id} evt={event} />
+                    <DashboardEvent key={event.id} evt={event} handleDelete={deleteEvent} />
                 ))}
 
             </div>
